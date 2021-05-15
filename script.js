@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var UP = 38;
   var DOWN = 40;
   var TAB = 9;
+  const userName = HelpCenter.user.name;
 
   function closest (element, selector) {
     if (Element.prototype.closest) {
@@ -398,4 +399,5 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+  alert(`Welcome to the new Help Center, ${userName}`);
 });
