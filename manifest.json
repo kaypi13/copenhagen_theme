@@ -384,6 +384,18 @@
           "value": true
         }
       ]
+    },
+    {
+      "label": "banner_label",
+      "variables": [
+        {
+          "identifier": "show_banner",
+          "type": "checkbox",
+          "description": "banner_desc",
+          "label": "banner_label",
+          "value": true
+        }
+      ]
     }
   ]
 }
