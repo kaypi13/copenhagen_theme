@@ -1,7 +1,7 @@
 {
   "name": "Copenhagen",
   "author": "Zendesk",
-  "version": "2.10.6",
+  "version": "2.10.7",
   "api_version": 2,
   "default_locale": "en-us",
   "settings": [
@@ -391,8 +391,8 @@
         {
           "identifier": "show_banner",
           "type": "checkbox",
-          "description": "banner_desc",
-          "label": "banner_label",
+          "description": "banner desc",
+          "label": "banner label",
           "value": true
         }
       ]
