@@ -399,7 +399,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-  alert(`Welcome to the new Help Center, ${userName}`);
 });
 
 //Custom Script
