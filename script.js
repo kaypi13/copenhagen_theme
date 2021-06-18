@@ -399,6 +399,31 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+  // Code for table of contents
+  if(location.href.indexOf("hc/en-us/articles") > 0){
+    const headings = document.querySelectorAll('.article-body h3')
+    if (headings && headings.length) {
+      // our code will continue inside here
+      let tableOfContentInner = ''
+      headings.forEach((heading, i) => {
+      // generate an 'li' element that includes a link to the appropriate section
+         tableOfContentInner += `<li><a href="#section_${i}">${heading.textContent}</a></li>`
+         const originalHeadingContent = heading.innerHTML
+         const anchor = `<a class="offset-anchor" id="section_${i}"></a>`
+         // add the anchor to the <h3> tag
+         heading.innerHTML = anchor + originalHeadingContent
+      })
+      const tableOfContent = `<ol>${tableOfContentInner}</ol>`
+      // add the generated table of contents to the dive
+      document.querySelector('#table-of-content').innerHTML += tableOfContent
+      if (location.hash) {
+        const target = location.hash
+        const offsetY = document.querySelector(target).offsetTop
+        window.scrollTo(0, offsetY)
+      }
+    }
+  }
+
 });
 
 //Custom Script
