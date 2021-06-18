@@ -5059,7 +5059,7 @@ html[dir="rtl"] .notification-left-aligned {
 .offset-anchor {
   display: block;
   position: relative;
-  /* top: -150px; */
+  top: -50px;
   visibility: hidden;
 }
 
