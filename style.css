@@ -5059,7 +5059,7 @@ html[dir="rtl"] .notification-left-aligned {
 .offset-anchor {
   display: block;
   position: relative;
-  top: -150px;
+  /* top: -150px; */
   visibility: hidden;
 }
 
@@ -5082,8 +5082,8 @@ html {
 	transition: all 50ms ease-in-out;
 }
 
-.table-of-content a:hover,
-.table-of-content a:focus {
+#table-of-content a:hover,
+#table-of-content a:focus {
 	color: #666;
 }  
 
