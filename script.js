@@ -405,11 +405,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (headings && headings.length) {
       // our code will continue inside here
       let tableOfContentInner = ''
+      let sectionName = ''
       headings.forEach((heading, i) => {
       // generate an 'li' element that includes a link to the appropriate section
-         tableOfContentInner += `<li><a href="#section_${i}">${heading.textContent}</a></li>`
+         sectionName = heading.textContent.toLowerCase().split(' ').join('-')
+         tableOfContentInner += `<li><a href="#${sectionName}">${heading.textContent}</a></li>`
          const originalHeadingContent = heading.innerHTML
-         const anchor = `<a class="offset-anchor" id="section_${i}"></a>`
+         const anchor = `<a class="offset-anchor" id="${sectionName}"></a>`
          // add the anchor to the <h3> tag
          heading.innerHTML = anchor + originalHeadingContent
       })
