@@ -424,6 +424,24 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo(0, offsetY)
       }
     }
+    // Scrollspy code
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('class');
+        if (entry.intersectionRatio > 0) {
+          document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
+        } else {
+          document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
+        }
+      });
+    });
+  
+    // Track all sections that have an h3 applied
+    document.querySelectorAll('.article-body h3').forEach((section) => {
+      observer.observe(section);
+    });
+    
   }
 
 });
