@@ -526,7 +526,7 @@ window.onload = function() {
 
           // Defaults: plugin parameters override data attributes, which override our defaults
           thisOptions = $.extend(
-              {content: "body", headings: "h2"},
+              {content: "body", headings: "h3"},
               {content: data.toc || undefined, headings: data.tocHeadings || undefined},
               options
           );
@@ -612,7 +612,7 @@ window.onload = function() {
 window.addEventListener("scroll", event => {
 let fromTop = window.scrollY+1;
 let mainNavLinks = document.querySelectorAll("ul.article-toc li a");
-let mainSections = document.querySelectorAll("h2");
+let mainSections = document.querySelectorAll("h3");
 let lastId;
 
 mainNavLinks.forEach(link => {
@@ -630,6 +630,15 @@ mainNavLinks.forEach(link => {
   } 
   
 });
+function initActiveLink(){
+  var currentURL = document.location.protocol +"//"+ document.location.hostname + document.location.pathname;
+  if(currentURL.match('articles')) {
+      var cur = document.querySelector("ul.article-toc li:nth-child(1) a");
+      if (cur) {
+        cur.classList.add("current");
+      }
+  }
+};
 
   $(document).ready(function(){
     $("#nav_holder").sticky({topSpacing:0});
